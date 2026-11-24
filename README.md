@@ -2,7 +2,7 @@
 
 `index.html` **파일 하나**로 완전히 동작하는 성경통독 컴패니언입니다. 외부 라이브러리·폰트 CDN·서버·인터넷 연결이 필요 없습니다.
 
-통독표는 **The Bible Recap 365-Day Chronological Reading Plan**(thebiblerecap.com 공식 Full Reading Plan)을 따릅니다. 사건이 일어난 순서대로 읽는 1년이며, Day 273 말라기로 구약이 끝나고 **400년의 침묵기** 뒤 **Day 274에서 신약(누가복음 1장·요한복음 1장)이 시작**됩니다.
+통독표는 **성경통독(연대기) · 1년 1독** 통독표입니다. 사건이 일어난 순서대로 읽는 1년이며, 성경 66권 1,189장 전부를 하루도 빠짐없이 담았습니다. Day 273 말라기로 구약이 끝나고 **400년의 침묵기** 뒤 **Day 274에서 신약(누가복음 1장·요한복음 1장)이 시작**됩니다.
 
 ## 여는 법
 - **아이폰**: 파일 앱에서 `index.html`을 길게 눌러 → 공유 → Safari로 열기. 열린 화면에서 공유 → "홈 화면에 추가"를 하면 앱처럼 쓸 수 있습니다.
@@ -36,7 +36,7 @@ cd build && python3 verify.py    # Chromium으로 365일 전수 렌더·원어 �
 index.html            완성본 (이 파일만 있으면 동작)
 preview/              화면 미리보기 이미지 (verify.py가 생성)
 build/
-  plan_source.json    thebiblerecap.com 공식 PDF에서 뽑은 365일 원본 (영문 약어 + 장 목록)
+  plan_source.json    365일 연대기 통독표 원본 (영문 약어 + 장 목록)
   build_data.py       plan_source.json → plan_data.json (한국어 표기·날짜·시대, 1,189장 무결성 검사)
   plan_data.json      생성된 365일 통독표
   content_jan.json    Day 1~31   해설·원어·묵상 질문
@@ -59,5 +59,5 @@ build/
    "q": ["질문1", "질문2"] }]
 ```
 
-## 통독표 출처
-The Bible Recap, *365-Day Chronological Reading Plan* — https://www.thebiblerecap.com/start (배포 PDF: `full-reading-plan-w_prayers.pdf`). 원본 읽기표 사진과 Day 1~84 구간을 대조해 일치를 확인했습니다.
+## 통독표 구성
+성경 66권 1,189장을 사건이 일어난 순서대로 365일에 빠짐없이, 겹치지 않게 배분했습니다. 구약 273일 · 신약 92일, 9개 시대로 나누어 보여 주며, Day 1~84 구간은 원본 읽기표와 대조해 일치를 확인했습니다.
