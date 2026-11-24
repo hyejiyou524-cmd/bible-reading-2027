@@ -771,6 +771,12 @@ function go(n){
 }
 
 /* ============ plan view ============ */
+function centerChip(box){
+  if(!box || !box.clientWidth) return;
+  const on = box.querySelector('.on'); if(!on) return;
+  const b = box.getBoundingClientRect(), r = on.getBoundingClientRect();
+  box.scrollLeft += (r.left - b.left) - (box.clientWidth - r.width) / 2;
+}
 function renderMonths(){
   const nowM = DAYS[state.day - 1].month;
   let h = '';
@@ -786,6 +792,7 @@ function renderMonths(){
     state.tabMonth = +b.dataset.month;
     renderPlan();
   }));
+  centerChip($('#months'));
 }
 function renderFlow(){
   const segs = PLAN.eras.map(e => {
@@ -806,6 +813,7 @@ function renderEras(){
     '<button class="era' + (state.day >= e.from && state.day <= e.to ? ' on' : '') + '" data-day="' + e.from + '">'
     + esc(e.name) + '<span>Day ' + e.from + '–' + e.to + '</span></button>').join('');
   $$('#eras .era').forEach(b => b.addEventListener('click', () => openDay(+b.dataset.day)));
+  centerChip($('#eras'));
 }
 function renderPlan(){
   const m = state.tabMonth;
